@@ -4,7 +4,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: ''
-    url: jdbc:mysql://localhost:3306/pedidos?serverTimezone=UTC
+    url: jdbc:mysql://${hostdb}:3306/pedidos?serverTimezone=UTC
     username: root
   jpa:
     hibernate:
@@ -14,6 +14,6 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://${hosteureka}:8761/eureka
   instance:
-    hostname: localhost   #deberá ser la dirección del host donde se aloja el contenedor
+    hostname: ${hostreal}   #deberá ser la dirección del host donde se aloja el contenedor
